@@ -1,4 +1,6 @@
-/* .text{
-  height: 140vh;
-  background-color: red;
-} */
+.text{
+ margin: 10px 20px;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+}

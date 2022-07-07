@@ -1,6 +1,13 @@
-import React from "react";
-import Button from '@mui/material/Button';
 import { CartItemTypes } from "../App";
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+
+
 // import { Wrapper} from './items.styles';
 import "./Card.css"
 type Props = {
@@ -8,16 +15,30 @@ type Props = {
   handleAddToCart: (clickedItem: CartItemTypes) => void;
 };
 const Cards: React.FC<Props> = ({ items, handleAddToCart }) => {
-  return <div className="Wrapper">
-    <img src={items.image} alt={items.title}/>
-    <div>
-      <h3>{items.title}</h3>
-      <p>{items.description}</p>
-      <h3>${items.price}</h3>
-
-    </div>
-    <Button onClick={()=> handleAddToCart(items)}>Add to Cart </Button>
-  </div>;
+  return <Card sx={{ maxWidth: 345,margin:"10px" }}>
+      <CardMedia
+        component="img"
+        height="140"
+        image={items.image}
+        alt={items.title}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+        {items.title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        {items.description}
+        </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+        ${items.price}
+        </Typography>
+      </CardContent>
+      <CardActions>
+       
+        <Button size="small" onClick={()=> handleAddToCart(items)}>Add to Cart</Button>
+      </CardActions>
+    </Card>
+  
 };
 
 export default Cards;
