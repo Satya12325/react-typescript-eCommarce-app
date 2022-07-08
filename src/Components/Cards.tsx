@@ -19,18 +19,18 @@ const Cards: React.FC<Props> = ({ items, handleAddToCart }) => {
       <CardMedia
         component="img"
         height="140"
-        image={items.image}
-        alt={items.title}
+        image={items.image[0]}
+        alt={items.productName}
       />
       <CardContent>
         <Typography className="text-overflow" gutterBottom variant="h5" component="div">
-        {items.title}
+        {items.productName}
         </Typography>
         {/* <Typography variant="body2" color="text.secondary">
         {items.description}
         </Typography> */}
         <Typography gutterBottom variant="h5" component="div">
-        ${items.price}
+        ₹{items.price}
         </Typography>
       </CardContent>
       <CardActions>

@@ -5,12 +5,12 @@ import { useState,useEffect } from 'react';
 import Cards from '../Components/Cards'
 
 export type CartItemTypes = {
-  id: number;
+  id: string;
   category: string;
   description: string;
   image: string;
   price: number;
-  title: string;
+  productName: string;
   amount: number;
 };
 
@@ -34,7 +34,7 @@ function Home() {
       
       const fetchProducts = async ()=> {
       //  setLooding(true)
-        const data = await fetch("https://fakestoreapi.com/products");
+        const data = await fetch("https://fabaly-json-api.herokuapp.com/products");
         const result = await data.json();
         
         setData(result);
