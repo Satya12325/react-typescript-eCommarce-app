@@ -14,7 +14,14 @@ export type CartItemTypes = {
   amount: number;
 };
 
-
+function IsLoading(){
+  return (
+    <div className="spiner-div"><div className="spinner-container">
+    <div className="loading-spinner">
+    </div>
+  </div></div>
+  )
+}
 
 
 function App() {
@@ -39,9 +46,7 @@ function App() {
 
 
 
-if(looding){
-  return <div>...looading</div>
-}
+
 
   return (
     <div className="App">
@@ -49,11 +54,12 @@ if(looding){
       cartvelue={5}
      />
      <div className="text">
-     {data.map((item) => (
+      {looding ?  < IsLoading/> : data.map((item) => (
          
-            <Cards items={item} handleAddToCart={handleAddToCart} />
-         
-        ))}
+         <Cards items={item} handleAddToCart={handleAddToCart} />
+      
+     )) }
+     
      </div>
      
     </div>

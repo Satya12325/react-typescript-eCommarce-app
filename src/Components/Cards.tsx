@@ -23,19 +23,19 @@ const Cards: React.FC<Props> = ({ items, handleAddToCart }) => {
         alt={items.title}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography className="text-overflow" gutterBottom variant="h5" component="div">
         {items.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        {/* <Typography variant="body2" color="text.secondary">
         {items.description}
-        </Typography>
+        </Typography> */}
         <Typography gutterBottom variant="h5" component="div">
         ${items.price}
         </Typography>
       </CardContent>
       <CardActions>
        
-        <Button size="small" onClick={()=> handleAddToCart(items)}>Add to Cart</Button>
+        <Button variant="contained" sx={{width:'100%'}} onClick={()=> handleAddToCart(items)}>Add to Cart</Button>
       </CardActions>
     </Card>
   
