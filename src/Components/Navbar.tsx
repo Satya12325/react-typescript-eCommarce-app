@@ -29,7 +29,7 @@ const Navbar:React.FC<props> = ({cartvelue}) => {
             <div className="navbar-menu">
                 <DehazeIcon/>
             </div>
-
+              
             <div>
             <IconButton aria-label="cart">
       <StyledBadge badgeContent={cartvelue} color="secondary">

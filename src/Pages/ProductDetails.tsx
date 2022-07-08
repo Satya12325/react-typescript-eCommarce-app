@@ -1,0 +1,14 @@
+
+
+
+
+const ProductDetails = ()=>{
+
+
+
+    return (
+        <>
+        
+        </>
+    )
+}
